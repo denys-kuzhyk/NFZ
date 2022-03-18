@@ -1,30 +1,32 @@
 import pickle
 from classes import *
 
-class Program(NFZController):
+class Program(NFZController):    # class of our program - this is where the action will take place
+                                 # of course, it inherits everything from the controller class
 
     def __init__(self):
         super().__init__()
-        try:
+        try:    # first thing the program does is loading all the data from the dat file
             plik = open("nfz.dat", "rb")
             self.lista_przychodni = pickle.load(plik)
             plik.close()
-        except:
+        except:    # if it doesn't exist - we create a new one
             plik = open("nfz.dat", "wb")
             pickle.dump([], plik)
             plik.close()
-        self.menu()
+        self.menu()    # actually starts the whole thing
 
     def menu(self):
 
-        while (True):
+        while (True):    # the while loop - so the user will decide when the program stops working
             try:
-                menu = int(input("1 - Przychodnia, 2 - Pacjent, 3 - Statystyki, 4 - Koniec "))
+                menu = int(input("1 - Przychodnia, 2 - Pacjent, 3 - Statystyki, 4 - Koniec "))    # the main menu
                 print()
 
                 if menu == 1:
                     menu1 = int(input("1 - Dodaj przychodnię, 2 - Usuń przychodnię, 3 - Dodaj pacjenta do przychodni, \n"
-                                         "4 - Usuń pacjenta z przychodni, 5 - Lista przychodni, 6 - Lista pacjentów w przychodni "))
+                                      "4 - Usuń pacjenta z przychodni, 5 - Lista przychodni, 6 - Lista pacjentów w przychodni "))
+                                      # the hospital menu - where all the hospital related operations are done
                     print()
                     if menu1 == 1:
                         nazwa = input("    Podaj nazwę przychodni: ")
@@ -71,6 +73,7 @@ class Program(NFZController):
                 elif menu == 2:
                     menu1 = int(input("1 - Dodaj chorobę pacjentowi, 2 - Lista chorób pacjenta, \n"
                                       "3 - Przepisz pacjenta do drugiej przychodni, 4 - Szukaj pacjenta "))
+                                      # the patient class - where all the patient related stuff happens
                     print()
                     if menu1 == 1:
                         nazwisko = input("    Podaj nazwisko pacjenta: ")
