@@ -163,12 +163,6 @@ class NFZController:
                 else:
                     print("    Lista pacjentów w tej przychodni jest pusta.\n")
 
-    def pokaz_wszystkie_choroby(self):
-
-        for i in self.lista_przychodni:
-            for k in i.lista_pacjentow:
-                ilosc = 0
-
     def statystyka_chorob(self):
         choroby = set()
         for i in self.lista_przychodni:
@@ -190,4 +184,3 @@ class NFZController:
         else:
             print("    Lista chorób jest pusta.")
         print()
-
