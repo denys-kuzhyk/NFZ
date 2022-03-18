@@ -134,5 +134,3 @@ class Program(NFZController):
 
             except ValueError:
                 print("\n    Nierozpoznana opcja menu.\n")
-
-obiekt = Program()
