@@ -12,4 +12,6 @@ I used the pickle library here to push the objects into a dat file, I think it's
 I was writing this program to exercise my OOP skills, but it really came to the point where I thought it could be in my portfolio here on GitHub.
 I tried to comment and explain all the functions and unclear moments, so I hope my code won't be hard to understand :)
 
+To make it work just create an object out of the Program class!
+
 Thank you for taking the time to check it out!
